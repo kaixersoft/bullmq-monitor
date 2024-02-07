@@ -17,6 +17,10 @@ export class MessageQueueRepository
     private messageQueueRepo: Repository<MessageQueueEntity>,
   ) {}
 
+  async find(param?: any): Promise<MessageQueueEntity[]> {
+    return await this.messageQueueRepo.find(param);
+  }
+
   async create(params: AddMessageQueueDto): Promise<MessageQueueEntity> {
     try {
       const newMessageQueue = this.messageQueueRepo.create(params);

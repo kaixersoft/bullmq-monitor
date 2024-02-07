@@ -16,7 +16,7 @@ import { ListMessageQueueDto } from './domain/dto/list-message-queue.dto';
 import { UpdateMessageQueueDto } from './domain/dto/update-message-queue';
 import { UpdateResult } from 'typeorm';
 
-@Controller('ui')
+@Controller()
 export class UiController {
   constructor(private uiService: UiService) {}
 

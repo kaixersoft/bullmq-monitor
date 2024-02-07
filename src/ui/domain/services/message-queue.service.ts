@@ -19,6 +19,15 @@ export class MessageQueueService implements IMessageQueueService {
     >,
   ) {}
 
+  async getQueueNames(): Promise<MessageQueueEntity[]> {
+    const data = await this.messageQueueRepo.find({
+      select: ['name'],
+      orderby: [{ field: 'created_at', direction: 'DESC' }],
+    });
+
+    return data;
+  }
+
   async addMessageQueue(
     params: AddMessageQueueDto,
   ): Promise<MessageQueueEntity> {

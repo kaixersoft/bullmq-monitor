@@ -21,4 +21,6 @@ export abstract class IMessageQueueService {
   abstract listMessageQueue(
     params: ListMessageQueueDto,
   ): Promise<[MessageQueueEntity[], totalRows: number] | []>;
+
+  abstract getQueueNames(): Promise<MessageQueueEntity[]>;
 }
